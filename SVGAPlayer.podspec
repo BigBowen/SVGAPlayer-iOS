@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = "Apache 2.0"
   s.author       = { "PonyCui" => "cuiminghui1@yy.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/BigBowen/SVGAPlayer-iOS.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/svga/SVGAPlayer-iOS.git", :tag => s.version }
   s.subspec 'Core' do |ss|
     ss.source_files  = "Source/*.{h,m}"
     ss.requires_arc = true
@@ -27,7 +27,8 @@ Pod::Spec.new do |s|
     ss.dependency 'Protobuf', '~> 3.4'
     ss.pod_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1',
-      'OTHER_CFLAGS' => '-Wno-error=incompatible-pointer-types'
+      'OTHER_CFLAGS' => '-Wno-error=incompatible-pointer-types -Wno-incompatible-pointer-types',
+      'CLANG_WARN_STRICT_PROTOTYPES' => 'NO'
     }
   end  
 end
