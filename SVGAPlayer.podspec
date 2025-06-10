@@ -30,5 +30,10 @@ Pod::Spec.new do |s|
       'OTHER_CFLAGS' => '-Wno-error=incompatible-pointer-types -Wno-incompatible-pointer-types',
       'CLANG_WARN_STRICT_PROTOTYPES' => 'NO'
     }
-  end  
+  end
+  s.subspec 'Samples' do |ss|
+    ss.resource_bundles = {
+      'SVGAPlayerSamples' => ['SVGAPlayer/Samples/*.svga']
+    }
+  end
 end
