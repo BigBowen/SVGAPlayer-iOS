@@ -1,4 +1,3 @@
-
 Pod::Spec.new do |s|
   s.name         = "SVGAPlayer"
   s.version      = "2.5.7"
@@ -28,6 +27,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Protobuf', '~> 3.4'
     ss.pod_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1',
+      'OTHER_CFLAGS' => '-Wno-error=incompatible-pointer-types'
     }
   end  
 end
